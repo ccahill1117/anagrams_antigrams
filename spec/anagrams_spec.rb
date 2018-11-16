@@ -18,21 +18,21 @@ describe('Grams#anagram') do
   end
 end
 
-describe('Grams#anagram') do
+describe('Grams#anagram1') do
   grams = Grams.new("deeps","spee")
   it('takes two user inputs and returns if not anagrams') do
     expect(grams.anagram()).to eq("The two strings are NOT anagrams!")
   end
 end
 
-describe('Grams#anagram') do
+describe('Grams#anagram1') do
   grams = Grams.new("DeEps","sPeed")
   it('takes two user inputs and returns if anagrams, regardless of case') do
     expect(grams.anagram()).to eq("The two strings are anagrams!")
   end
 end
 
-describe('Grams#anagram') do
+describe('Grams#anagram1') do
   grams = Grams.new("DeEps","sPed")
   it('takes two user inputs and returns if anagrams, regardless of case') do
     expect(grams.anagram()).to eq("The two strings are NOT anagrams!")
@@ -62,11 +62,18 @@ describe('Grams#anti') do
   end
 end
 
-describe('Gramsis_word') do
+describe('Grams#is_word') do
   grams = Grams.new("tbh","hi")
   it('can determine if one or more strings are either words or non-words') do
     expect(grams.is_word()).to eq("first string is not a word")
   end
 end
 
-grams = Grams.new("?","")
+
+describe('Gramsis_word') do
+  grams = Grams.new("? hi !","? hi !")
+  grams.delete_others()
+  it('delete non letter chars') do
+    expect(grams.first_string).to eq("first string is not a word")
+  end
+end
