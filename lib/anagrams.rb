@@ -20,6 +20,26 @@ class Grams
     end
   end
 
+  def is_word()
+    if (self.first_string.include?("a") == false) && (self.first_string.include?("e") == false) && (self.first_string.include?("i") == false) && (self.first_string.include?("o") == false) &&
+      (self.first_string.include?("u") == false)
+      var = 1
+    else var =0
+    end
+    if (self.second_string.include?("a") == false) && (self.second_string.include?("e") == false) && (self.second_string.include?("i") == false) && (self.second_string.include?("o") == false) &&
+      (self.second_string.include?("u") == false)
+      var = var + 2
+    else var = var + 0
+    end
+    if var == 1
+      "first string is not a word"
+    elsif var == 2
+      "second string is not a word"
+    elsif var == 3
+      "first and second strings are not words"
+    end
+  end
+
   def anti()
     self.first_string = self.first_string.split('').sort
     self.second_string = self.second_string.split('').sort

@@ -61,3 +61,10 @@ describe('Grams#anti') do
     expect(grams.anti()).to eq("these are not antigrams")
   end
 end
+
+describe('Gramsis_word') do
+  grams = Grams.new("tbh","hi")
+  it('can determine if one or more strings are either words or non-words') do
+    expect(grams.is_word()).to eq("first string is not a word")
+  end
+end
