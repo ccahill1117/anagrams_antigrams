@@ -26,16 +26,25 @@ class Grams
     self.first_string.map! {|letter| letter.downcase()}
     self.second_string.map! {|letter| letter.downcase()}
     y = 0
-      loop do
-          if self.first_string[0] == self.second_string[y]
-            self.common_array.push(self.second_string[y])
-            y = y + 1
-          else y = y +1
+    z = 0
+      until (z > self.first_string.length-1)
+        loop do
+            if self.first_string[z] == self.second_string[y]
+              self.common_array.push(self.second_string[y])
+              y = y + 1
+            else y = y + 1
+          end
+          if y > self.second_string.length-1
+            break
+          end
         end
-        if y > self.second_string.length
-          break
+        y = 0
+        z = z + 1
       end
-    end
+        if (self.common_array == [])
+          "these are antigrams"
+        elsif (self.common_array != [])
+          "these are not antigrams"
+        end
   end
-
 end

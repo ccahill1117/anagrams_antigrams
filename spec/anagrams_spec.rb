@@ -46,3 +46,11 @@ describe('Grams#anti') do
     expect(grams.common_array).to eq(["b","b"])
   end
 end
+
+describe('Grams#anti') do
+  grams = Grams.new("bbc","bbc")
+  grams.anti()
+  it('if common element, then push common element to common array') do
+    expect(grams.common_array).to eq(["b","b","b","b","c","c"])
+  end
+end
