@@ -9,6 +9,30 @@ class Grams
     @common_array = []
   end
 
+  def delete_others()
+    self.first_string = self.first_string.split('')
+    self.second_string = self.second_string.split('')
+
+        num_punc_space = [' ','0','1','2','3','4','5','6','7','8','9','~','`','!','@','#','$','%','^','&','*','(',')','-','_','+','=','[',']','{','}','|',':',';','<',',','>','.','/','?']
+        y = 0
+        z = 0
+          until (z > self.first_string.length-1)
+            loop do
+                if self.first_string[z] == num_punc_space[y]
+                  self.first_string[z] = ''
+                  y = y + 1
+                else y = y + 1
+              end
+              if y > num_punc_space.length-1
+                break
+              end
+            end
+            y = 0
+            z = z + 1
+          end
+
+  end
+
   def anagram()
     self.first_string = self.first_string.split('').sort
     self.second_string = self.second_string.split('').sort

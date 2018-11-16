@@ -68,3 +68,5 @@ describe('Gramsis_word') do
     expect(grams.is_word()).to eq("first string is not a word")
   end
 end
+
+grams = Grams.new("?","")
