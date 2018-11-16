@@ -41,9 +41,9 @@ class Grams
         y = 0
         z = z + 1
       end
-        if (self.common_array == [])
+        if self.common_array == []
           "these are antigrams"
-        elsif (self.common_array != [])
+        elsif self.common_array != []
           "these are not antigrams"
         end
   end
