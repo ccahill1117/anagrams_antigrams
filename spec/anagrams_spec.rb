@@ -38,3 +38,11 @@ describe('Grams#anagram') do
     expect(grams.anagram()).to eq("The two strings are NOT anagrams!")
   end
 end
+
+describe('Grams#anti') do
+  grams = Grams.new("b","bb")
+  grams.anti()
+  it('if common element, then push common element to common array') do
+    expect(grams.common_array).to eq(["b","b"])
+  end
+end
