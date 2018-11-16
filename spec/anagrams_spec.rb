@@ -13,9 +13,14 @@ end
 
 describe('Grams#anagram') do
   grams = Grams.new("deeps","speed")
-  grams.anagram()
-  it('takes two user inputs and turns into an array') do
-    expect(grams.first_string).to eq(["d","e","e","p","s"])
-    expect(grams.second_string).to eq(["s","p","e","e","d"])
+  it('takes two user inputs and returns if anagrams') do
+    expect(grams.anagram()).to eq("The two strings are anagrams!")
+  end
+end
+
+describe('Grams#anagram') do
+  grams = Grams.new("deeps","spee")
+  it('takes two user inputs and returns if not anagrams') do
+    expect(grams.anagram()).to eq("The two strings are NOT anagrams!")
   end
 end
