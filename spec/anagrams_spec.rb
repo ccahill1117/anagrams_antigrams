@@ -26,8 +26,15 @@ describe('Grams#anagram') do
 end
 
 describe('Grams#anagram') do
-  grams = Grams.new("Deeps","speed")
+  grams = Grams.new("DeEps","sPeed")
   it('takes two user inputs and returns if anagrams, regardless of case') do
     expect(grams.anagram()).to eq("The two strings are anagrams!")
+  end
+end
+
+describe('Grams#anagram') do
+  grams = Grams.new("DeEps","sPed")
+  it('takes two user inputs and returns if anagrams, regardless of case') do
+    expect(grams.anagram()).to eq("The two strings are NOT anagrams!")
   end
 end

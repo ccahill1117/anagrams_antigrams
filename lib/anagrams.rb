@@ -11,7 +11,9 @@ class Grams
   def anagram()
     self.first_string = self.first_string.split('').sort
     self.second_string = self.second_string.split('').sort
-    if self.first_string == self.second_string
+      self.first_string.map! {|letter| letter.downcase()}
+      self.second_string.map! {|letter| letter.downcase()}
+    if self.first_string.sort == self.second_string.sort
       "The two strings are anagrams!"
     else "The two strings are NOT anagrams!"
     end
