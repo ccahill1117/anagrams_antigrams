@@ -10,8 +10,8 @@ class Grams
   end
 
   def anagram()
-    self.delete_others()
     self.is_word()
+    self.delete_others()
     self.anti()
     self.anagram1()
   end
@@ -66,13 +66,14 @@ class Grams
   end
 
   def is_word()
-    if (self.first_string.include?("a") == false) && (self.first_string.include?("e") == false) && (self.first_string.include?("i") == false) && (self.first_string.include?("o") == false) &&
-      (self.first_string.include?("u") == false)
-      var = 1
-    else var =0
+    var = 0
+    if (self.first_string.downcase.include?("a") == false) && (self.first_string.downcase.include?("e") == false) && (self.first_string.downcase.include?("i") == false) && (self.first_string.downcase.include?("o") == false) &&
+      (self.first_string.downcase.include?("u") == false)
+      var = var + 1
+    else var = var + 0
     end
-    if (self.second_string.include?("a") == false) && (self.second_string.include?("e") == false) && (self.second_string.include?("i") == false) && (self.second_string.include?("o") == false) &&
-      (self.second_string.include?("u") == false)
+    if (self.second_string.downcase.include?("a") == false) && (self.second_string.downcase.include?("e") == false) && (self.second_string.downcase.include?("i") == false) && (self.second_string.downcase.include?("o") == false) &&
+      (self.second_string.downcase.include?("u") == false)
       var = var + 2
     else var = var + 0
     end
@@ -88,8 +89,8 @@ class Grams
   end
 
   def anti()
-    self.first_string.map! {|letter| letter.downcase()}
-    self.second_string.map! {|letter| letter.downcase()}
+    self.first_string = self.first_string.map  {|letter| letter.downcase()}
+    self.second_string = self.second_string.map {|letter| letter.downcase()}
     y = 0
     z = 0
       until (z > first_string.length-1)
