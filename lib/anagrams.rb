@@ -52,9 +52,8 @@ class Grams
         end
         p = 0
         g = g + 1
-        end
-        self.second_string = self.second_string.reject { |emp| emp.empty? }
-
+      end
+      self.second_string = self.second_string.reject { |emp| emp.empty? }
   end
 
   def anagram1()

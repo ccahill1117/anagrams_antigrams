@@ -48,33 +48,6 @@ describe('Grams#anagram1') do
   end
 end
 
-#
-# commented this out because my .map function is breaking my testing. Will try to have fixed asap.
-# describe('Grams#anti') do
-#   grams = Grams.new("b","b")
-#   grams.is_word()
-#   grams.delete_others()
-#   grams.anti()
-#   it('if common element, then push common element to common array') do
-#     expect(grams.common_array).to eq(["b","b"])
-#   end
-# end
-#
-# describe('Grams#anti') do
-#   grams = Grams.new("bbc","bbc")
-#   grams.anti()
-#   it('if common element, then push common element to common array') do
-#     expect(grams.common_array).to eq(["b","b","b","b","c"])
-#   end
-# end
-#
-# describe('Grams#anti') do
-#   grams = Grams.new("ixxxxxxxx","yyyyyyyyi")
-#   it('can determine if antigrams or not') do
-#     expect(grams.anti()).to eq("these are not antigrams")
-#   end
-# end
-
 describe('Grams#is_word') do
   grams = Grams.new("tbh","hi")
   it('can determine if one or more strings are either words or non-words') do
